@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piedra, papel o tijera</title>
-    <script>
         // 1 es piedra, 2 es papel, 3 es tijera
         /*
         function aleatorio(min, max) {
@@ -51,33 +44,40 @@
         // Opciones disponibles
         const opciones = ["", "Piedra 🥌", "Papel 📋", "Tijera ✂"];
 
-        // Pedir jugada al jugador
-        let jugador = parseInt(prompt("Elige: 1 para Piedra, 2 para Papel o 3 para Tijera"));
-        let pc = aleatorio(1, 3);
+        let marcadorjugador = 0
+        let marcadorpc = 0
+        let empates = 0
 
-        // Validar entrada
-        if (![1, 2, 3].includes(jugador)) {
-        alert("Opción incorrecta ❌. Debes elegir 1, 2 o 3.");
-        } else {
-        alert("Elegiste: " + opciones[jugador]);
-        alert("La PC eligió: " + opciones[pc]);
+        while (marcadorjugador < 3 && marcadorpc < 3) {
 
-        // Determinar resultado
-        if (jugador === pc) {
-            alert("Empate 🤝");
-        } else if (
-            (jugador === 1 && pc === 3) ||
-            (jugador === 2 && pc === 1) ||
-            (jugador === 3 && pc === 2)
-        ) {
-            alert("¡Ganaste! 🎉");
-        } else {
-            alert("Perdiste 😢");
+            // Pedir jugada al jugador
+            let jugador = parseInt(prompt("Elige: 1 para Piedra, 2 para Papel o 3 para Tijera"));
+            let pc = aleatorio(1, 3);
+
+            // Validar entrada
+            if (![1, 2, 3].includes(jugador)) {
+            alert("Opción incorrecta ❌. Debes elegir 1, 2 o 3.");
+            } else {
+            alert("Elegiste: " + opciones[jugador]);
+            alert("La PC eligió: " + opciones[pc]);
+
+            // Determinar resultado
+            if (jugador === pc) {
+                alert("Empate 🤝");
+                empates = empates + 1
+            } else if (
+                (jugador === 1 && pc === 3) ||
+                (jugador === 2 && pc === 1) ||
+                (jugador === 3 && pc === 2)
+            ) {
+                alert("¡Ganaste! 🎉");
+                marcadorjugador++
+            } else {
+                alert("Perdiste 😢");
+                marcadorpc ++
+            }
+            alert ("Marcador, jugador: " + marcadorjugador + " , PC: " + marcadorpc + " , empates: " + empates);
+            }
         }
-        }
-    </script>
-</head>
-<body>
-    <h1>Piedra, papel o tijera</h1>
-</body>
-</html>
+        alert("Marcador final, Jugador: " + marcadorjugador + " PC: " + marcadorpc + " , empates: " + empates);
+        
