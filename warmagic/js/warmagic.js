@@ -28,19 +28,29 @@ function selectSpellPlayer() {
     let inputFireblast = document.getElementById("fireblast")
     let inputWaterblast = document.getElementById("waterblast")
     let inputThunderblast = document.getElementById("thunderblast")
+    let spanYourSpell = document.getElementById("yourspell")
+    let spanYourLifePoints = document.getElementById("yourlifepoints")
+    
+    
 
     if(inputFirebolt.checked) {
-        alert("You have selected the firebolt spell")
+        spanYourSpell.innerHTML = "Firebolt"
+        spanYourLifePoints.innerHTML = "1000"
     }else if(inputWaterbolt.checked) {
-        alert("You have selected the waterbolt spell")
+        spanYourSpell.innerHTML = "Waterbolt"
+        spanYourLifePoints.innerHTML = "1000"
     }else if(inputThunderbolt.checked) {
-        alert("You have selected the thunderbolt spell")
+        spanYourSpell.innerHTML = "Thunderbolt"
+        spanYourLifePoints.innerHTML = "1000"
     }else if(inputFireblast.checked) {
-        alert("You have selected the fireblast spell")
+        spanYourSpell.innerHTML = "Fireblast"
+        spanYourLifePoints.innerHTML = "1000"
     }else if(inputWaterblast.checked) {
-        alert("You have selected the waterblast spell")
+        spanYourSpell.innerHTML = "Waterblast"
+        spanYourLifePoints.innerHTML = "1000"
     }else if(inputThunderblast.checked) {
-        alert("You have selected the thunderblast spell")
+        spanYourSpell.innerHTML = "Thunderblast"
+        spanYourLifePoints.innerHTML = "1000"
     }else{
         alert("you have not selected a spell, please select one.")
     }
