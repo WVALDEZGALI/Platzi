@@ -4,36 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warmagic 🧙‍♂️</title></title>
+    <script src="./js/warmagic.js"></script>
 </head>
 <body>
     <h1>Warmagic 🔥💧⚡</h1>
 
-    <section id="Lifepoints"></section>
+    <section id="sectionLifePoints"></section>
         <p>Your Lifepoints: <span>1000</span></p>
         <p>Opponent Lifepoints: <span>1000</span></p>
-    <section id="Select-magic"></section>
+    <section id="sectionSchoolMagic"></section>
         <h2>Chose a school of magic:</h2>
         <p>
-            <button>Fire 🔥</button>
-            <button>Water 💧</button>
-            <button>Thunder ⚡</button>
+            <button id="buttonSchoolMagicFire">Fire 🔥</button>
+            <button id="buttonSchoolMagicWater">Water 💧</button>
+            <button id="buttonSchoolMagicThunder">Thunder ⚡</button>
         </p>
-        <button>Select</button>
-    <section id="Select-spell">
+        
+    <section id="sectionSelectSpell">
         <h2>Chose spell:</h2>
-        <p>
-            <button>Firebolt 🔥</button>
-            <button>Waterbolt 💧</button>
-            <button>Thunderbolt⚡</button>
-        </p>
+
+        <input type="radio" name="spell" id="firebolt">
+        <label for="firebolt">firebolt</label> <br>
+
+        <input type="radio" name="spell" id="waterbolt">
+        <label for="waterbolt">waterbolt</label> <br>
+
+        <input type="radio" name="spell" id="thunderbolt">
+        <label for="thunderbolt">thunderbolt</label> <br>
+
+        <input type="radio" name="spell" id="fireblast">
+        <label for="fireblast">fireblast</label> <br>
+
+        <input type="radio" name="spell" id="waterblast">
+        <label for="waterblast">waterblast</label> <br>
+
+        <input type="radio" name="spell" id="thunderblast">
+        <label for="thunderblast">thunderblast</label> <br>
+
+        <button id="buttonSelectSpell">Select</button>
+
     </section>
 
-    <section id="Combat-log">
+    <section id="sectionCombatLog">
         <p>Combat history</p>
     </section>
 
-    <section id="Play-again">
-        <button>Play again</button>
+    <section id="sectionPlayAgain">
+        <button id="buttonPlayAgain">Play again</button>
     </section>
 
 </body>
