@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warmagic 🧙‍♂️</title></title>
-    <script src="./js/warmagic.js"></script>
+    <script src="./js/warmagic.js" defer></script>
 </head>
 <body>
     <h1>Warmagic 🔥💧⚡</h1>
-
-    <section id="sectionSchoolMagic"></section>
-        <h2>Chose a school of magic:</h2>
-        <p>
-            <button id="buttonSchoolMagicFire">Fire 🔥</button>
-            <button id="buttonSchoolMagicWater">Water 💧</button>
-            <button id="buttonSchoolMagicThunder">Thunder ⚡</button>
-        </p>
         
     <section id="sectionSelectSpell">
         <h2>Chose spell:</h2>
@@ -44,8 +36,19 @@
 
     <section id="sectionLifePoints"></section>
         <p>You have selected the <span id="yourspell">????</span> spell and you have <span id="yourlifepoints">????</span> life points.</p>
-        <p>The enemy has selected the <span id="enemyspell"></span> spell and has <span id="enemylifepoints"></span> life points.</p>
+    <section> 
+        <button id="buttonSelectSpellPc">Select</button>
+    </section>
+        <p>The enemy has selected the <span id="enemyspell">????</span> spell and has <span id="enemylifepoints">????</span> life points.</p>
 
+<section id="sectionSchoolMagic"></section>
+        <h2>Chose a school of magic:</h2>
+        <p>
+            <button id="buttonSchoolMagicFire">Fire 🔥</button>
+            <button id="buttonSchoolMagicWater">Water 💧</button>
+            <button id="buttonSchoolMagicThunder">Thunder ⚡</button>
+        </p>
+        
     <section id="sectionCombatLog">
         <p>Combat history</p>
     </section>

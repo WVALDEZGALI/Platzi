@@ -1,10 +1,14 @@
 {
     "cSpell.words": [
+        "enemylifepoints",
+        "enemyspell",
         "Fireblast",
         "Firebolt",
         "Lifepoints",
         "Warmagic",
         "Waterblast",
-        "Waterbolt"
+        "Waterbolt",
+        "yourlifepoints",
+        "yourspell"
     ]
 }
