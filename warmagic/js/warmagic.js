@@ -115,8 +115,37 @@ function schoolMagicEnemy () {
     } else {
         schoolMagicPc = "THUNDER"
     }
+
+    combat()
     
 }
+
+function combat() {
+    
+    if (schoolMagic == schoolMagicPc) {
+        createMessage("Draw 🤝")
+    } else if (
+        (schoolMagic == "FIRE" && schoolMagicPc == "THUNDER") ||
+        (schoolMagic == "WATER" && schoolMagicPc == "FIRE") ||
+        (schoolMagic == "THUNDER" && schoolMagicPc == "WATER")
+    ) {
+        createMessage("¡You win! 🎉")
+    } else {
+        createMessage("You lost 😢")
+    }
+}
+
+function createMessage(combatResult) {
+
+    let sectionHistoryCombatLog = document.getElementById("sectionCombatLog")
+
+    let paragraph = document.createElement("p")
+    paragraph.innerHTML = "You have selected " + schoolMagic + " school magic. And the enemy has selected " + schoolMagicPc + " school magic. " + combatResult
+    sectionHistoryCombatLog.appendChild(paragraph)
+}
+
+
+
 
 
 
