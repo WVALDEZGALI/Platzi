@@ -1,6 +1,8 @@
 
 let schoolMagic 
 let schoolMagicPc
+let lifePointsPlayer = 3
+let lifePointsPc = 3
 function startGame() {
     let bntSelectSpell = document.getElementById("buttonSelectSpell")
     bntSelectSpell.addEventListener("click", selectSpellPlayer)
@@ -25,26 +27,19 @@ function selectSpellPlayer() {
     let inputWaterblast = document.getElementById("waterblast")
     let inputThunderblast = document.getElementById("thunderblast")
     let spanYourSpell = document.getElementById("yourspell")
-    let spanYourLifePoints = document.getElementById("yourlifepoints")
 
     if(inputFirebolt.checked) {
         spanYourSpell.innerHTML = "Firebolt"
-        spanYourLifePoints.innerHTML = "1000"
     }else if(inputWaterbolt.checked) {
         spanYourSpell.innerHTML = "Waterbolt"
-        spanYourLifePoints.innerHTML = "1000"
     }else if(inputThunderbolt.checked) {
         spanYourSpell.innerHTML = "Thunderbolt"
-        spanYourLifePoints.innerHTML = "1000"
     }else if(inputFireblast.checked) {
         spanYourSpell.innerHTML = "Fireblast"
-        spanYourLifePoints.innerHTML = "1000"
     }else if(inputWaterblast.checked) {
         spanYourSpell.innerHTML = "Waterblast"
-        spanYourLifePoints.innerHTML = "1000"
     }else if(inputThunderblast.checked) {
         spanYourSpell.innerHTML = "Thunderblast"
-        spanYourLifePoints.innerHTML = "1000"
     }else{
         alert("you have not selected a spell, please select one.")
     }
@@ -64,26 +59,20 @@ function startGamePc() {
     btnSelectSpellPc.addEventListener("click", () => {
         let pcSpell = selectSpellPc(1, 6)
         let spanPcSpell = document.getElementById("enemyspell")
-        let spanPcLifePoints = document.getElementById("enemylifepoints")
 
         if (pcSpell == 1) {
             spanPcSpell.innerHTML = "Firebolt"
-            spanPcLifePoints.innerHTML = "1000"
+            
         } else if (pcSpell == 2) {
             spanPcSpell.innerHTML = "Waterbolt"
-            spanPcLifePoints.innerHTML = "1000"
         } else if (pcSpell == 3) {
             spanPcSpell.innerHTML = "Thunderbolt"
-            spanPcLifePoints.innerHTML = "1000"
         } else if (pcSpell == 4) {
             spanPcSpell.innerHTML = "Fireblast"
-            spanPcLifePoints.innerHTML = "1000"
         } else if (pcSpell == 5) {
             spanPcSpell.innerHTML = "Waterblast"
-            spanPcLifePoints.innerHTML = "1000"
         } else {
             spanPcSpell.innerHTML = "Thunderblast"
-            spanPcLifePoints.innerHTML = "1000"
         }
     })
 }
@@ -121,17 +110,35 @@ function schoolMagicEnemy () {
 }
 
 function combat() {
+    let spanYourLifePoints = document.getElementById("yourlifepoints") 
+    let spanEnemyLifePoints = document.getElementById("enemylifepoints")
+
+
     
     if (schoolMagic == schoolMagicPc) {
         createMessage("Draw 🤝")
     } else if (
-        (schoolMagic == "FIRE" && schoolMagicPc == "THUNDER") ||
-        (schoolMagic == "WATER" && schoolMagicPc == "FIRE") ||
-        (schoolMagic == "THUNDER" && schoolMagicPc == "WATER")
+        (schoolMagic == "FIRE" && schoolMagicPc == "THUNDER") || //&& double ampersand logical operator and. Only in the case where both conditions are true will it be true, in the other cases it will be false.
+        (schoolMagic == "WATER" && schoolMagicPc == "FIRE") || // || double pipe logical operator or. Only in the case where both conditions are false will it be false, in the other cases it will be true.
+        (schoolMagic == "THUNDER" && schoolMagicPc == "WATER") // ! not
     ) {
         createMessage("¡You win! 🎉")
+        lifePointsPc --
+        spanEnemyLifePoints.innerHTML = lifePointsPc
     } else {
         createMessage("You lost 😢")
+        lifePointsPlayer --
+        spanYourLifePoints.innerHTML = lifePointsPlayer
+    }
+
+    lifeCounter()
+}
+
+function lifeCounter() {
+    if (lifePointsPc == 0) {
+        createMessageFinal("Congratulations You WIN ✌")
+    }else if(lifePointsPlayer == 0) {
+        createMessageFinal("Sorry You LOSE 😭")
     }
 }
 
@@ -143,6 +150,17 @@ function createMessage(combatResult) {
     paragraph.innerHTML = "You have selected " + schoolMagic + " school magic. And the enemy has selected " + schoolMagicPc + " school magic. " + combatResult
     sectionHistoryCombatLog.appendChild(paragraph)
 }
+
+function createMessageFinal(combatResultFinal) {
+
+    let sectionHistoryCombatLogFinal = document.getElementById("sectionCombatLogFinal")
+
+    let paragraph = document.createElement("p")
+    paragraph.innerHTML = combatResultFinal
+    sectionHistoryCombatLogFinal.appendChild(paragraph)
+}
+
+
 
 
 
