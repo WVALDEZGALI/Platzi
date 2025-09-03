@@ -5,62 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warmagic 🧙‍♂️</title></title>
     <script src="./js/warmagic.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Warmagic 🔥💧⚡</h1>
+    <h1 class="Title">Warmagic 🔥💧⚡</h1> 
         
-    <section id="sectionSelectSpell">
-        <h2>Chose spell:</h2>
+    <section id="sectionSelectCharacter">
+        <h2>Chose your character race:</h2>
 
-        <input type="radio" name="spell" id="firebolt">
-        <label for="firebolt">firebolt</label> <br>
+        <input type="radio" name="race" id="human">
+        <label for="human">Human</label> <br>
 
-        <input type="radio" name="spell" id="waterbolt">
-        <label for="waterbolt">waterbolt</label> <br>
+        <input type="radio" name="race" id="elf">
+        <label for="elf">Elf</label> <br>
 
-        <input type="radio" name="spell" id="thunderbolt">
-        <label for="thunderbolt">thunderbolt</label> <br>
+        <input type="radio" name="race" id="orc">
+        <label for="orc">Orc</label> <br>
 
-        <input type="radio" name="spell" id="fireblast">
-        <label for="fireblast">fireblast</label> <br>
+        <input type="radio" name="race" id="dwarf">
+        <label for="dwarf">Dwarf</label> <br> <br>
 
-        <input type="radio" name="spell" id="waterblast">
-        <label for="waterblast">waterblast</label> <br>
+        <button id="buttonSelectCharacter">Select</button>
 
-        <input type="radio" name="spell" id="thunderblast">
-        <label for="thunderblast">thunderblast</label> <br>
-
-        <button id="buttonSelectSpell">Select</button>
+        <p>You have selected <span id="yourrace"></span> race. 
 
     </section>
 
-    <section id="sectionLifePoints"></section>
-        <p>You have selected <span id="yourspell">????</span> spell. 
-    <section> 
-        <button id="buttonSelectSpellPc">Select</button>
+    <section id="sectionLifePoints">
+        <button id="buttonSelectCharacterPc">Select</button>
+        <p>The enemy has selected <span id="enemyrace"></span> race. 
     </section>
-        <p>The enemy has selected <span id="enemyspell">????</span> spell. 
+        
+    <section id="selectSchoolMagic">
 
-    <section id="selectSchoolMagic"></section>
         <h2>Chose a school of magic:</h2>
-    <section>
+
         <p>Player life points: <span id="yourlifepoints">3</span></p>
         <p>Computer life points: <span id="enemylifepoints">3</span></p>
-    </section>
-    
+
         <p>
             <button id="buttonSchoolMagicFire">Fire 🔥</button>
             <button id="buttonSchoolMagicWater">Water 💧</button>
             <button id="buttonSchoolMagicThunder">Thunder ⚡</button>
         </p>
 
-    <p>Combat history</p>
+        <p>Combat history</p>
+    
     <section id="sectionCombatLog"></section>
 
     <section id="sectionCombatLogFinal"></section>
 
     <section id="sectionPlayAgain">
         <button id="buttonPlayAgain">Play again</button>
+    </section>
+
     </section>
 
 </body>

@@ -4,8 +4,15 @@ let schoolMagicPc
 let lifePointsPlayer = 3
 let lifePointsPc = 3
 function startGame() {
-    let bntSelectSpell = document.getElementById("buttonSelectSpell")
-    bntSelectSpell.addEventListener("click", selectSpellPlayer)
+
+    let secSchoolMagic = document.getElementById("selectSchoolMagic")
+    secSchoolMagic.style.display = "none"
+
+    let secPlayAgain = document.getElementById("sectionPlayAgain")
+    secPlayAgain.style.display = "none"
+    
+    let bntSelectSpell = document.getElementById("buttonSelectCharacter")
+    bntSelectSpell.addEventListener("click", selectCharacterPlayer)
 
     let bntSchoolMagicFire = document.getElementById("buttonSchoolMagicFire")
     bntSchoolMagicFire.addEventListener("click", schoolFire)
@@ -13,66 +20,62 @@ function startGame() {
     bntSchoolMagicWater.addEventListener("click", schoolWater)
     let bntSchoolMagicThunder = document.getElementById("buttonSchoolMagicThunder")
     bntSchoolMagicThunder.addEventListener("click", schoolThunder)
-
-
+    let bntPlayAgain = document.getElementById("buttonPlayAgain")
+    bntPlayAgain.addEventListener("click", playAgain)
 }
 
 window.addEventListener("load", startGame)
 
-function selectSpellPlayer() {
-    let inputFirebolt = document.getElementById("firebolt")
-    let inputWaterbolt = document.getElementById("waterbolt")
-    let inputThunderbolt = document.getElementById("thunderbolt")
-    let inputFireblast = document.getElementById("fireblast")
-    let inputWaterblast = document.getElementById("waterblast")
-    let inputThunderblast = document.getElementById("thunderblast")
-    let spanYourSpell = document.getElementById("yourspell")
+function selectCharacterPlayer() {
 
-    if(inputFirebolt.checked) {
-        spanYourSpell.innerHTML = "Firebolt"
-    }else if(inputWaterbolt.checked) {
-        spanYourSpell.innerHTML = "Waterbolt"
-    }else if(inputThunderbolt.checked) {
-        spanYourSpell.innerHTML = "Thunderbolt"
-    }else if(inputFireblast.checked) {
-        spanYourSpell.innerHTML = "Fireblast"
-    }else if(inputWaterblast.checked) {
-        spanYourSpell.innerHTML = "Waterblast"
-    }else if(inputThunderblast.checked) {
-        spanYourSpell.innerHTML = "Thunderblast"
+    let secSchoolMagic = document.getElementById("selectSchoolMagic")
+    secSchoolMagic.style.display = "block"
+
+    let inputHuman = document.getElementById("human")
+    let inputElf = document.getElementById("elf")
+    let inputOrc = document.getElementById("orc")
+    let inputDwarf = document.getElementById("dwarf")
+    let spanYourSpell = document.getElementById("yourrace")
+
+    if(inputHuman.checked) {
+        spanYourSpell.innerHTML = "Human"
+    }else if(inputElf.checked) {
+        spanYourSpell.innerHTML = "Elf"
+    }else if(inputOrc.checked) {
+        spanYourSpell.innerHTML = "Orc"
+    }else if(inputDwarf.checked) {
+        spanYourSpell.innerHTML = "Dwarf"
     }else{
-        alert("you have not selected a spell, please select one.")
+        alert("you have not selected a race, please select one.")
     }
+
+    startGamePc()
 }
 
-window.addEventListener("load", startGamePc)
-
 function startGamePc() {
-    let btnSelectSpellPc = document.getElementById("buttonSelectSpellPc")
 
-    // Definimos la función selectSpellPc
+    let btnSelectSpellPc = document.getElementById("buttonSelectCharacterPc")
+
+    // We define the function selectSpellPc
     function selectSpellPc(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min)
+        
     }
-
-    // Agregamos el evento
+    
+    // Add the event
     btnSelectSpellPc.addEventListener("click", () => {
-        let pcSpell = selectSpellPc(1, 6)
-        let spanPcSpell = document.getElementById("enemyspell")
+        let pcSpell = selectSpellPc(1, 4)
+        let spanPcSpell = document.getElementById("enemyrace")
 
         if (pcSpell == 1) {
-            spanPcSpell.innerHTML = "Firebolt"
+            spanPcSpell.innerHTML = "Human"
             
         } else if (pcSpell == 2) {
-            spanPcSpell.innerHTML = "Waterbolt"
+            spanPcSpell.innerHTML = "Elf"
         } else if (pcSpell == 3) {
-            spanPcSpell.innerHTML = "Thunderbolt"
-        } else if (pcSpell == 4) {
-            spanPcSpell.innerHTML = "Fireblast"
-        } else if (pcSpell == 5) {
-            spanPcSpell.innerHTML = "Waterblast"
+            spanPcSpell.innerHTML = "Orc"
         } else {
-            spanPcSpell.innerHTML = "Thunderblast"
+            spanPcSpell.innerHTML = "Dwarf"
         }
     })
 }
@@ -90,6 +93,7 @@ function schoolWater () {
 }
 
 function schoolMagicEnemy () {
+
 
     function selectSchoolMagicPc(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min)
@@ -135,6 +139,7 @@ function combat() {
 }
 
 function lifeCounter() {
+
     if (lifePointsPc == 0) {
         createMessageFinal("Congratulations You WIN ✌")
     }else if(lifePointsPlayer == 0) {
@@ -158,6 +163,20 @@ function createMessageFinal(combatResultFinal) {
     let paragraph = document.createElement("p")
     paragraph.innerHTML = combatResultFinal
     sectionHistoryCombatLogFinal.appendChild(paragraph)
+
+    let bntSchoolMagicFire = document.getElementById("buttonSchoolMagicFire")
+    bntSchoolMagicFire.disabled = true
+    let bntSchoolMagicWater = document.getElementById("buttonSchoolMagicWater")
+    bntSchoolMagicWater.disabled = true
+    let bntSchoolMagicThunder = document.getElementById("buttonSchoolMagicThunder")
+    bntSchoolMagicThunder.disabled = true
+
+    let secPlayAgain = document.getElementById("sectionPlayAgain")
+    secPlayAgain.style.display = "block"
+}
+
+function playAgain() {
+    location.reload()
 }
 
 
