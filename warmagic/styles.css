@@ -1,14 +1,14 @@
 .Title {
     color: aqua;
-    width: 300px;
+    width: 100vh;
     height: 50px;
     background-color: blueviolet;
     display: flex;
     justify-content: center;
 }
 
-/*#sectionSelectCharacter {
+#sectionSelectCharacter {
     display: flex;
     flex-direction: column;
-}*/
+}
 
