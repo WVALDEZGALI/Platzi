@@ -10,5 +10,14 @@
 #sectionSelectCharacter {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectionLifePoints {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
