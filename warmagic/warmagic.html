@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1 class="Title">Warmagic 🔥💧⚡</h1> 
+    
         
     <section id="sectionSelectCharacter">
-        <h2>Chose your character race:</h2>
 
-        <input type="radio" name="race" id="human">
-        <label for="human">Human</label> <br>
+        <h1 class="title">Warmagic</h1> 
+        <h2 class="subTitle">Chose your character race:</h2>
 
-        <input type="radio" name="race" id="elf">
-        <label for="elf">Elf</label> <br>
+        <div class="cards">
+            <label class="warmagicCard" for="human">Human</label> 
+            <input class="warmagicImput" type="radio" name="race" id="human">
 
-        <input type="radio" name="race" id="orc">
-        <label for="orc">Orc</label> <br>
+            <label class="warmagicCard" for="elf">Elf</label> 
+            <input class="warmagicImput" type="radio" name="race" id="elf">
 
-        <input type="radio" name="race" id="dwarf">
-        <label for="dwarf">Dwarf</label> <br> <br>
+            <label class="warmagicCard" for="orc">Orc</label> 
+            <input class="warmagicImput" type="radio" name="race" id="orc">
+
+            <label class="warmagicCard" for="dwarf">Dwarf</label> 
+            <input class="warmagicImput" type="radio" name="race" id="dwarf">
+        </div>
 
         <button id="buttonSelectCharacter">Select</button>
-
         <p>You have selected <span id="yourrace"></span> race. 
-
+        
     </section>
 
     <section id="sectionLifePoints">
